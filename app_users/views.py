@@ -25,7 +25,7 @@ class Registration(View):
             context = {
                 'registration_form': registrtaion_form
             }
-            return render(request, 'users/registration.html')
+            return render(request, 'users/registration.html', context=context)
 
 
 class Login(View):
@@ -53,4 +53,4 @@ class Login(View):
 class Logout(View):
     def get(self, request):
         logout(request)
-        redirect('login')
+        return redirect('login')

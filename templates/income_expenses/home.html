@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+    <div class="p-10 pb-2 text-center">
+        <h1 class="text-3xl text-slate-600 font-semibold mb-5">Salom {{ user.username }}!</h1>
+    </div>
+    {% for balance in balances %}
+        <div class="p-2 text-center">
+            <div class="bg-orange-600 ml-80 mr-80 pt-1 pb-1 rounded-xl">
+                <h1 class="text-xl text-white font-semibold">Balans: {{ balance.balance_amount }} so'm</h1>
+            </div>
+        </div>
+    {% endfor %}
+
+{% load static %}
+    <a href="#">
+        <div class="bg-green-500 hover:bg-green-400 mt-10 ml-80 mr-80 pt-2 pb-2 rounded-xl flex items-center">
+            <img class="ml-2 inline-block size-6 " src="{% static 'icons/money.png' %}">
+            <h1 class="text-l text-white pl-2 font-semibold">Kirim qo'shish</h1>
+        </div>
+    </a>
+
+    <a href="#">
+        <div class="bg-red-500 hover:bg-red-400 mt-5 ml-80 mr-80 pt-2 pb-2 rounded-xl flex items-center">
+            <img class="ml-2 inline-block size-6 " src="{% static 'icons/delete.png' %}">
+            <h1 class="text-l text-white pl-2 font-semibold">Chiqim qo'shish</h1>
+        </div>
+    </a>
+{% endblock content %}

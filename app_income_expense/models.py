@@ -69,10 +69,10 @@ class Reports(models.Model):
 
 class Balance(models.Model):
     user = models.ForeignKey(Users, on_delete=models.CASCADE)
-    balance_amount = models.IntegerField()
+    balance_amount = models.IntegerField(default=0)
 
     class Meta:
         db_table = 'Balance'
 
-    def __str__(self):
+    def __int__(self):
         return self.balance_amount

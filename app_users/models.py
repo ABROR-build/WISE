@@ -3,7 +3,7 @@ from django.contrib.auth.models import AbstractUser
 
 
 class Users(AbstractUser):
-    date_born = models.DateField()
+    date_born = models.DateField(null=True)
 
     class Meta:
         db_table = 'Users'
