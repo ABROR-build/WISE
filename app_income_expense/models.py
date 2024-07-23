@@ -27,9 +27,8 @@ class Incomes(models.Model):
     income_type = models.ForeignKey(IncomeTypes, on_delete=models.CASCADE)
     earned_from = models.CharField(max_length=800)
     amount = models.IntegerField()
-    comment = models.TextField()
+    comment = models.CharField(max_length=400, null=True, blank=True)
     timestamp = models.DateTimeField(auto_now=True)
-    is_income = models.BooleanField(default=True)
 
     class Meta:
         db_table = 'Incomes'
@@ -40,12 +39,11 @@ class Incomes(models.Model):
 
 class Expenses(models.Model):
     user = models.ForeignKey(Users, on_delete=models.CASCADE)
-    execpense_type = models.ForeignKey(ExpenseTypes, on_delete=models.CASCADE)
+    expense_type = models.ForeignKey(ExpenseTypes, on_delete=models.CASCADE)
     spent_to = models.CharField(max_length=800)
     amount = models.IntegerField()
-    comment = models.TextField()
+    comment = models.CharField(max_length=400, null=True, blank=True)
     timestamp = models.DateTimeField(auto_now=True)
-    is_expense = models.BooleanField(default=True)
 
     class Meta:
         db_table = 'Expenses'
@@ -56,9 +54,12 @@ class Expenses(models.Model):
 
 class Reports(models.Model):
     user = models.ForeignKey(Users, on_delete=models.CASCADE)
-    activity = models.CharField(max_length=800)
-    timestamp = models.DateTimeField(auto_now=True)
-    amount = models.IntegerField()
+    activity = models.CharField(max_length=800, null=True)
+    comment = models.CharField(max_length=1000, null=True)
+    timestamp = models.DateTimeField(auto_now_add=True)
+    amount = models.IntegerField(null=True)
+    is_income = models.BooleanField(default=False, null=True)
+    is_expense = models.BooleanField(default=False, null=True)
 
     class Meta:
         db_table = 'Reports'

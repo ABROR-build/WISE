@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    AddIncome
+{% endblock title %}
+
+{% block content %}
+    <div class="p-10 lg:p-20 text-center">
+        <h2 class="text-3xl lg:text-4xl font-semibold text-slate-500 mb-6">Kirim qo'shish</h2>
+        <form method="post" action="." class="lg:w-1/4 px-4 mx-auto">
+            {% csrf_token %}
+
+            <div class="mb-5">
+                <select id="income_type" name="income_type" class="text-slate-500 text-opacity-60 w-full px-4 py-2 rounded-xl border-2 border-white-500 opacity-80 focus:border-orange-500 focus:outline-none text-left">
+                    <option selected>Kirim turini tanlang</option>
+                    {% for income_type in income_types %}
+                        <option value="{{ income_type.id }}">{{ income_type }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-5">
+                <input type="text" placeholder="kirim nomi" name="earned_from" class="w-full px-4 py-2 rounded-xl border-2 border-white-500 opacity-80 focus:border-orange-500 focus:outline-none text-left">
+            </div>
+
+            <div class="mb-5">
+                <input type="number" placeholder="kirim miqdori" name="amount" class=" opacity-80 w-full px-4 py-2 rounded-xl border-2 border-white-500 focus:border-orange-500 focus:outline-none">
+            </div>
+
+            <div class="mb-5">
+                <input type="text" placeholder="izoh" name="comment" class=" opacity-80 w-full px-4 py-2 rounded-xl border-2 border-white-500 focus:border-orange-500 focus:outline-none">
+            </div>
+
+            <button type="submit" class="px-5 w-full py-3 rounded-xl text-white text-opacity-60 bg-slate-600 hover:bg-slate-700">Qo'shish</button>
+        </form>
+    </div>
+{% endblock content %}
