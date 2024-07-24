@@ -10,3 +10,11 @@
 
 4 -> Har bir kunning hisobotini ko'rish uchun "Hisobotlar" oynasidagi jadvalda sanalarga bosilsa bas u yerda o'sha
     kunning jami chiqimi va kirimi chiqb keladi va o'sha kunga taalluqli bo'lgan kirim chiqimlar bilan birga
+
+    --- TEST UCHUN TAYYOR USERLAR ---
+
+    username: admin | pass: 0304
+    username: Abror | pass: 0304
+    username: ahmad | pass: 0304
+
+    Quyidagi userlarning test uchun yig'ilgan recordlari mavjud
