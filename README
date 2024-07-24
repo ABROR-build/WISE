@@ -1,0 +1,12 @@
+                        -- FUNKSIONALLIKLAR --
+
+1 -> Balans ko'rinadi va har bir qo'shish yoki ayirishda o'zgaradi
+
+2 -> Hisobotlar oynasida har bitta qilingan kirim va chiqimlar ko'rinadi --> agar chiqimlar bosilsa faqat chiqmlar
+    va agar kirimlar bosilsa faqat kirimlar jami kirimlar hisobi bilan chiqb keladi
+
+3 -> Bugungi balansni "bugun" tugmasi orqali ko'riladi --> u yerda "kirimlar" bosilsa bugungi kirimlar
+    "chiqimlar" bosilsa esa bugungi chiqimlar kelib chiqadi
+
+4 -> Har bir kunning hisobotini ko'rish uchun "Hisobotlar" oynasidagi jadvalda sanalarga bosilsa bas u yerda o'sha
+    kunning jami chiqimi va kirimi chiqb keladi va o'sha kunga taalluqli bo'lgan kirim chiqimlar bilan birga
